@@ -40,6 +40,7 @@ import urllib.request                   # for number 22
 from bs4 import BeautifulSoup           # for number 23
 import random                           # for number 24
 from random import randint              # for number 24
+from bs4 import BeautifulSoup	#25
 os.system('cls')
         
 ############################### START CODEING ################################
@@ -93,6 +94,7 @@ def menu():
     print(colored("[22] Get webpage contents",'green'))
     print(colored("[23] Extract all the URLs from the webpage",'green'))
     print(colored("[24] DOS attack DATEBASE",'green'))
+    print(colored("[25] find all website url",'green'))
     print("_____________________________________________")
 menu()
 print()
@@ -3783,3 +3785,13 @@ elif option == 24:
         print("Gmail:{}\nPassword:{}".format('{}@gmail.com'.format(username), password))
         response = requests.post("http://ali29.blogfa.com/", files=files)
 ######################################################################################################
+elif option == 25:
+	print("================================================")
+	url = input("enter url plz")
+	
+	reqs = requests.get(url)
+	soup = BeautifulSoup(reqs.text, 'html.parser')
+
+	urls = []
+	for link in soup.find_all('a'):
+		print(link.get('href'))
