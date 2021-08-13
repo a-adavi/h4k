@@ -3767,7 +3767,7 @@ elif option == 23:
     urls = []
     for link in soup.find_all('a'):
         print(link.get('href'))
-        
+######################################################################################################
 elif option == 24:
     def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
         return ''.join(random.choice(chars) for _ in range(size))
@@ -3787,7 +3787,7 @@ elif option == 24:
 ######################################################################################################
 elif option == 25:
 	print("================================================")
-	url = input("enter url plz")
+	url = input("enter url plz : ==> ")
 	
 	reqs = requests.get(url)
 	soup = BeautifulSoup(reqs.text, 'html.parser')
