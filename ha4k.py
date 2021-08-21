@@ -1,4 +1,5 @@
 #Alireza-adavi  (my full name)
+#It is recommended to use it in Kali Linux operating system
 #(instagram: A_ir5)
 #life (IRAN)
 import socket       # for number 1,8
@@ -41,7 +42,7 @@ from bs4 import BeautifulSoup           # for number 23
 import random                           # for number 24
 from random import randint              # for number 24
 from bs4 import BeautifulSoup	#25
-os.system('cls')
+os.system('clear')
         
 ############################### START CODEING ################################
 def menu():
