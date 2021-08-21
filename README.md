@@ -30,4 +30,10 @@ Python pips.py
  
 
 
+It is recommended to use it in Kali Linux operating system
+
+
+
+
+
 **:) چیز**
