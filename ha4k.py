@@ -30,7 +30,7 @@ import sys                                                                   #fo
 from termcolor import colored, cprint                                                               #color text
 import requests                                                                                     # for number 14,24
 import webbrowser                                                                                   # for number 14
-import pynput                                                                                       # for number 15  
+import pynput      #if u cant install use kali plz or set # or del           			    # for number 15  
 from pynput.keyboard import Key, Listener                                                           # for number 15
 import hashlib                                                                                      # for number 16
 from urllib.request import urlopen                                                                  # for number 17  
@@ -42,7 +42,7 @@ from bs4 import BeautifulSoup           # for number 23
 import random                           # for number 24
 from random import randint              # for number 24
 from bs4 import BeautifulSoup	#25
-os.system('clear')
+os.system('clear')#change 'clear' to 'cls' if u use vscode in windows 
         
 ############################### START CODEING ################################
 def menu():
