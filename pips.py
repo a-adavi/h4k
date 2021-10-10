@@ -1,8 +1,9 @@
 import os
 import time 
+os.system('pip install colored')
 from termcolor import colored, cprint
 time.sleep(0.0)
-os.system('pip install colored')
+#
 print(colored("######## DONE ########",'green'))
 os.system('pip install random')
 print(colored("######## DONE ########",'green'))
