@@ -52,24 +52,6 @@ def menu():
     #time.sleep(3 )
     print("Loading... ")
     animation = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
-    
-    for i in range(len(animation)):
-        time.sleep(0.0)
-        sys.stdout.write("\r" + animation[i % len(animation)])
-        sys.stdout.flush()
-        
-    '''def play_sound(frequency=2500, duration=1000):
-        winsound.Beep(frequency, duration)
-    #voice
-    if __name__ == "__main__":
-     frequency = 40 #HZ
-     duration = 50 #1 second
-     #low deep sound
-     play_sound(frequency, duration)
-     #high pitch sound
-     play_sound()'''
-    now = datetime.now()
-    print(now)
     print("__________________________________")
     print(colored("[1]  get website IP",'green' ))
     print("[2]  make password")
