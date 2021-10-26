@@ -3770,6 +3770,8 @@ elif option == 24:
 ######################################################################################################
 elif option == 25:
 	print("================================================")
+	print("ex :==>  https://www.site.com/		OR     * https://www.site.com * for find some sites on host+https://www.site.com+")
+	print("================================================")
 	url = input("enter url plz : ==> ")
 	
 	reqs = requests.get(url)
@@ -3778,3 +3780,5 @@ elif option == 25:
 	urls = []
 	for link in soup.find_all('a'):
 		print(link.get('href'))
+######################################################################################################
+
