@@ -1,6 +1,6 @@
 import os
 import time 
-os.system('pip install colored')
+os.system('pip install termcolor')
 from termcolor import colored, cprint
 time.sleep(0.0)
 #
