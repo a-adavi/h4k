@@ -64,7 +64,7 @@ def menu():
     print("[12] play mp3")
     print(colored("[13] [admin+robots+map] page-website finder", 'green' ))
     print(colored("[14] keyloger", 'green'))
-    print(colored("[15] hash MD5 find password", 'green'))
+    #print(colored("[15] hash MD5 find password", 'green'))
     print(colored("[16] test strong your pass ", 'green'))
     print(colored("[17] passlist generate ", 'green'))
     print(colored("[18] get info number", 'green'))
