@@ -1,6 +1,5 @@
 # Alireza-adavi  (my full name)
 # It is recommended to use it in Kali Linux operating system
-# (instagram: A_ir5)
 # life (IRAN)
 import socket  # for number 1,8
 import random  # for number 2
