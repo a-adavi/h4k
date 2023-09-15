@@ -1,6 +1,7 @@
 # Alireza-adavi  (my full name)
 # It is recommended to use it in Kali Linux operating system
 # life (IRAN)
+#instagram (mof3r)
 import socket  # for number 1,8
 import random  # for number 2
 import string  # for number 2,24
