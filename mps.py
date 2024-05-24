@@ -1,4 +1,8 @@
 # python 3
+#LosU$7I`zmjb0{/.      - bash MD%
+#_ZpqDgC*S_[cx4ZLosU$7I`zmjb0{/.        - bash MD%
+#_Zp33qDgCgC*S*S_[cx4Z21LosU$7I`zmjb0{/.       - bash MD%
+#gC*SLosU$7I`zmjb0{/.
 print("____________________________________________")
 
 def menu():
