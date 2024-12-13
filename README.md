@@ -1,7 +1,7 @@
 # pips
 hacking and security
 **********************************
-
+در دیباگ کمک کنید
 
 
 install code :
