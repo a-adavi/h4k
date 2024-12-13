@@ -5,10 +5,15 @@ hacking and security
 
 
 install code :
+
 --
+
 git clone https://github.com/a-adavi/h4k.git
+
 CD h4k
+
 Python h4k.py
+
 ••••••••••••••••••••••••••••••••••••••••••
 
 
