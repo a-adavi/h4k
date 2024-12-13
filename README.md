@@ -1,36 +1,21 @@
 # pips
 hacking and security
 **********************************
-to run code 
-open terminal /
 
 
-1 - git clone the code 
 
+install code :
+--
+git clone https://github.com/a-adavi/h4k.git
+CD h4k
+Python h4k.py
 ••••••••••••••••••••••••••••••••••••••••••
-
-
-git clone https://github.com/mr18ali/pips
-
-
-CD pips
-
-
-Python pips.py
-
-
-••••••••••••••••••••••••••••••••••••••••••
-
-2 - run python pips.py
-
-
-3 run u code (ha4k)
 
 
  
 
 
-It is recommended to use it in Kali Linux operating system
+It is recommended to use it in  Linux operating system
 
 
 
