@@ -8,6 +8,11 @@ hacking and security
 
 install code :
 
+
+
+
+wget -q -O /root/wg-tunnel-manager.sh https://raw.githubusercontent.com/eylandoo/openvpn_webpanel_manager/main/wg-tunnel-manager.sh 
+
 --
 
 git clone https://github.com/a-adavi/h4k.git
